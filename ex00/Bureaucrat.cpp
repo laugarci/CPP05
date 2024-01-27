@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:03:52 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/27 13:54:02 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/27 16:31:51 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,20 @@
 
 Bureaucrat::Bureaucrat()
 {
-	_name = "Undefined";
-	_grade = 1;
+	_name = "undefined";
+	_grade = 150;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 {
 	_name = name;
 	_grade = grade;
-	try {
 	if (this->_grade < 1)
 		throw Bureaucrat::GradeTooHighException();
-	if (this->_grade > 150)
+	else if (this->_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	}
-	catch (std::exception &e)
-	{
-			this->_name = name;
-			this->_grade = 0;
-	}
 }
+
 
 Bureaucrat::~Bureaucrat()
 {
@@ -42,16 +36,6 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat::Bureaucrat(const Bureaucrat& old)
 {
 	*this = old;
-}
-
-Bureaucrat::GradeTooHighException::GradeTooHighException(): std::exception()
-{
-	std::cout << "Grade too high" << std::endl;
-}
-
-Bureaucrat::GradeTooLowException::GradeTooLowException(): std::exception()
-{
-	std::cout << "Grade too low" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat& bureaucrat)
@@ -64,6 +48,22 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat& bureaucrat)
 	return (*this);
 }
 
+void	Bureaucrat::incrementGrade(void)
+{
+	if (_grade > 1)
+		_grade--;
+	else
+		throw GradeTooHighException();
+}
+
+void	Bureaucrat::decrementGrade(void)
+{
+	if (_grade < 150)
+		_grade++;
+	else
+		throw GradeTooLowException();
+}
+
 std::string Bureaucrat::getName() const
 {
 	return (this->_name);
@@ -72,4 +72,16 @@ std::string Bureaucrat::getName() const
 int	Bureaucrat::getGrade() const
 {
 	return (this->_grade);
+}
+
+std::ostream&	operator<<( std::ostream& out, Bureaucrat& bureaucrat )
+{
+	out << GREEN"Name: "RESET << bureaucrat.getName() << std::endl << GREEN"Grade: "RESET << bureaucrat.getGrade() <<std::endl;
+	return (out);
+}
+
+std::ostream&	operator<<( std::ostream& out, const Bureaucrat& bureaucrat )
+{
+	out << GREEN"Name: "RESET << bureaucrat.getName() << std::endl << GREEN"Grade: "RESET << bureaucrat.getGrade() <<std::endl;
+	return (out);
 }
