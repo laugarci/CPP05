@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 12:27:07 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/27 12:41:04 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/27 13:53:41 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ class Bureaucrat {
 		Bureaucrat	&operator=(const Bureaucrat& bureaucrat);
 		std::string	getName(void) const;
 		int			getGrade(void) const;
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				GradeTooHighException();
+		};
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				GradeTooLowException();
+		};
 };
 
 
