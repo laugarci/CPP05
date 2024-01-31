@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:04:45 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/31 18:25:21 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:46:02 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void tryToSign(Bureaucrat& bureaucrat)
 	{
 		Form form("form1", 10, 10);
 		bureaucrat.signForm(form);
+		//bureaucrat.signForm(form);
 		std::cout << std::endl;
 		//std::cout << std::endl << form << std::endl << std::endl;
 	}

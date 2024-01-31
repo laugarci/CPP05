@@ -6,25 +6,22 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:39:55 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/31 18:22:44 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:45:27 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
-/*
+
+
 Form::Form(std::string name, unsigned int signGrade, unsigned int execGrade)
+    : _name(name), _sign(false), _gradeToSign(signGrade), _gradeToExecute(execGrade)
 {
-	_name = name;
-	_gradeToSign = signGrade;
-	_gradeToExecute = execGrade;
-	_sign = false;
-}*/
-
-Form::Form(std::string name, unsigned int signGrade, unsigned int execGrade)
-    : _name(name), _sign(false), _gradeToSign(signGrade), _gradeToExecute(execGrade) {
+	if (_gradeToSign < 1)
+		throw IncorrectGrades();
+	else if (_gradeToExecute > 150)
+		throw IncorrectGrades();
 }
-
 
 Form::~Form()
 {
@@ -39,10 +36,7 @@ Form &Form::operator=(const Form& form)
 {
 	if (this != &form)
 	{
-	//	_name = form.getName();
         _sign = form.getIsSigned();
-   //     _gradeToSign = form.getSignGrade();
-    //    _gradeToExecute = form.getExecGrade();
 	}
 	return (*this);
 }
@@ -73,8 +67,13 @@ void Form::beSigned(const Bureaucrat& bureaucrat)
 		throw Form::GradeTooLowException();
 	else if (bureaucrat.getGrade() < _gradeToSign)
 		throw Form::GradeTooHighException();
-	_sign = true;
-	std::cout << GREEN "Success: " RESET "the form was successfully signed." << std::endl;
+	if (_sign == false)
+	{
+		_sign = true;
+		std::cout << GREEN "Success: " RESET "the form was successfully signed." << std::endl;
+	}
+	else
+		std::cout << RED "This form is already signed." RESET << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& out, const Form& form)

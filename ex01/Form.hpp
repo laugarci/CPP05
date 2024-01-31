@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:30:31 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/31 18:23:17 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:46:11 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ class Form {
 			public:
 				const char* what() const throw() {
 					return "Bureaucrat grade too low to sign this form.";
+				}
+		};
+		class IncorrectGrades : public std::exception {
+			public:
+				const char* what() const throw() {
+					return "Form: incorrect grade. Out of range (1-150)";
 				}
 		};
 };
