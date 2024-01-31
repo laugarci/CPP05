@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:03:52 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/31 15:48:07 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:15:15 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,14 @@ int	Bureaucrat::getGrade() const
 
 void    Bureaucrat::signForm(Form &form)
 {
-    try
-    {
-        form.beSigned(*this);
-        std::cout << "The bureaucrat" << " signed " << form.getName() << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << "The bureaucrat" << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
-    }
+	try
+	{
+		form.beSigned(*this);
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << RED "Error: " RESET << e.what() << std::endl;
+	}
 }
 
 std::ostream&	operator<<( std::ostream& out, Bureaucrat& bureaucrat )

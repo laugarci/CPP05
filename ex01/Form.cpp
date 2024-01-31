@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:39:55 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/31 16:36:30 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:22:44 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,21 +71,26 @@ void Form::beSigned(const Bureaucrat& bureaucrat)
 {
 	if (bureaucrat.getGrade() > _gradeToSign)
 		throw Form::GradeTooLowException();
+	else if (bureaucrat.getGrade() < _gradeToSign)
+		throw Form::GradeTooHighException();
 	_sign = true;
+	std::cout << GREEN "Success: " RESET "the form was successfully signed." << std::endl;
 }
 
-std::ostream& operator<<(std::ostream& out, const Form& form) {
-    out << "------------- Form Info -------------" << std::endl;
-    out << "Form name: " << form.getName() << std::endl
-      << "Grade to sign: " << form.getSignGrade() << std::endl
-      << "Grade to execute: " << form.getExecGrade();
-    return out;
+std::ostream& operator<<(std::ostream& out, const Form& form)
+{
+	out << BGRED "[ Form info ]" RESET << std::endl;
+	out << GREEN "Form name: " RESET<< form.getName() << std::endl
+		<< GREEN "Grade to sign: " RESET<< form.getSignGrade() << std::endl
+		<< GREEN "Grade to execute: " RESET<< form.getExecGrade();
+	return (out);
 }
 
-std::ostream& operator<<(std::ostream& out, Form& form) {
-    out << "------------- Form Info -------------" << std::endl;
-    out << "Form name: " << form.getName() << std::endl
-      << "Grade to sign: " << form.getSignGrade() << std::endl
-      << "Grade to execute: " << form.getExecGrade();
-    return out;
+std::ostream& operator<<(std::ostream& out, Form& form)
+{
+	out << BGRED "[ Form info ]" RESET << std::endl;
+	out << GREEN "Form name: " RESET<< form.getName() << std::endl
+		<< GREEN "Grade to sign: " RESET<< form.getSignGrade() << std::endl
+		<< GREEN "Grade to execute: " RESET<< form.getExecGrade();
+	return (out);
 }
