@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 12:27:07 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/27 16:31:25 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 14:32:56 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ class Bureaucrat {
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw() {
-					return "Bureaucrat grade out of range (1-150)";
+					return "Bureaucrat grade too high. Out of range (1-150)";
 				}
 		};
 		class GradeTooLowException : public std::exception {
 			public:
 				const char* what() const throw() {
-					return "Bureaucrat grade out of range (1-150)";
+					return "Bureaucrat grade too low. Out of range (1-150)";
 				}
 		};
 

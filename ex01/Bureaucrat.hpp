@@ -6,13 +6,12 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 12:27:07 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/27 16:31:25 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 15:50:56 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
-
 
 #define BOLD "\x1B[1m"
 #define RESET "\x1B[0m"
@@ -22,6 +21,8 @@
 
 #include <iostream>
 #include <string>
+
+class Form;
 
 class Bureaucrat {
 	private:
@@ -37,17 +38,18 @@ class Bureaucrat {
 		int			getGrade(void) const;
 		void		incrementGrade(void);
 		void		decrementGrade(void);
+		void		signForm(Form &form);
 		//exceptions
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw() {
-					return "Bureaucrat grade out of range (1-150)";
+					return "Bureaucrat grade too hight. Out of range (1-150)";
 				}
 		};
 		class GradeTooLowException : public std::exception {
 			public:
 				const char* what() const throw() {
-					return "Bureaucrat grade out of range (1-150)";
+					return "Bureaucrat grade too low. Out of range (1-150)";
 				}
 		};
 

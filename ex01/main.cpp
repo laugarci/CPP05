@@ -6,70 +6,27 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:04:45 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/27 16:32:27 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 15:44:13 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-void createObject(std::string name, int grade)
+int main( void )
 {
-	try {
-	Bureaucrat a(name, grade);
-	std::cout << a << std::endl;
-	} catch (const std::exception& e) {
-		std::cerr << RED "Error: " RESET << e.what() << std::endl << std::endl;
+	try
+	{
+		Bureaucrat bureaucrat("ash",11);
+		Form form("formName", 10, 10);
+		
+		bureaucrat.signForm(form);
+		std::cout << form << std::endl;
 	}
-}
-
-void	incrementGradeTest(Bureaucrat& bureaucrat)
-{
-	try {
-		bureaucrat.incrementGrade();
-	} catch (const std::exception& e) {
-		std::cerr << RED "Error: " RESET << e.what() << std::endl;
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
 	}
+    return (0);
 }
 
-void	decrementGradeTest(Bureaucrat& bureaucrat)
-{
-	try {
-		bureaucrat.decrementGrade();
-	} catch (const std::exception& e) {
-		std::cerr << RED "Error: " RESET << e.what() << std::endl;
-	}
-}
-
-int main()
-{
-	std::cout << BGRED "[ Correct params Tests ]" RESET << std::endl;
-	createObject("1", 13);
-	createObject("2", 51);
-	createObject("3", 130);
-	createObject("4", 150);
-	std::cout << BGRED "[ Incorrect params test ]" RESET << std::endl;
-	createObject("5", 0);
-	createObject("6", -13);
-	createObject("7", 170);
-	createObject("8", 6734);
-	std::cout << BGRED "[ Increment grade Tests ]" RESET << std::endl;
-	Bureaucrat a ("Increment", 3);
-	std::cout << a;
-	incrementGradeTest(a);
-	std::cout << a;
-	incrementGradeTest(a);
-	std::cout << a;
-	incrementGradeTest(a);
-	std::cout << a;
-	std::cout << BGRED "[ Decrement grade test ]" RESET << std::endl;
-	Bureaucrat b ("Decrement", 148);
-	std::cout << b;
-	decrementGradeTest(b);
-	std::cout << b;
-	decrementGradeTest(b);
-	std::cout << b;
-	decrementGradeTest(b);
-	std::cout << b;
-
-	return (0);
-}

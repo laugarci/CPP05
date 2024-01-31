@@ -6,13 +6,13 @@
 #    By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 13:17:51 by laugarci          #+#    #+#              #
-#    Updated: 2024/01/27 12:30:18 by laugarci         ###   ########.fr        #
+#    Updated: 2024/01/31 16:23:58 by laugarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
 
-SRC_FILES = main.cpp Bureaucrat.cpp
+SRC_FILES = main.cpp Bureaucrat.cpp Form.cpp
 OBJ_DIR = objs/
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 OBJS = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
