@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:39:55 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/31 18:45:27 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:50:26 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 Form::Form(std::string name, unsigned int signGrade, unsigned int execGrade)
     : _name(name), _sign(false), _gradeToSign(signGrade), _gradeToExecute(execGrade)
 {
-	if (_gradeToSign < 1)
+/*	if (_gradeToSign < 1)
 		throw IncorrectGrades();
 	else if (_gradeToExecute > 150)
-		throw IncorrectGrades();
+		throw IncorrectGrades();*/
 }
 
 Form::~Form()
