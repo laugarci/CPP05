@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:39:55 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/31 18:50:26 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:33:56 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,19 @@
 #include "Bureaucrat.hpp"
 
 
+Form::Form() : _name("Default"), _gradeToSign(10), _gradeToExecute(6)
+{
+    _sign = false;
+    std::cout << "Default constructor called" << std::endl;
+}
+
 Form::Form(std::string name, unsigned int signGrade, unsigned int execGrade)
     : _name(name), _sign(false), _gradeToSign(signGrade), _gradeToExecute(execGrade)
 {
-/*	if (_gradeToSign < 1)
+	if (_gradeToSign < 1)
 		throw IncorrectGrades();
 	else if (_gradeToExecute > 150)
-		throw IncorrectGrades();*/
+		throw IncorrectGrades();
 }
 
 Form::~Form()
