@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:18:21 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 16:24:14 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:07:16 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation Form", 145, 137)
 {
-    std::cout << "Shrubbery Creation Form is created" << std::endl;
     this->_target = "default";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubbery Creation Form", 145, 137)
 {
-    std::cout << "Shrubbery Creation Form is created" << std::endl;
     this->_target = target;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout << "Shrubbery Creation Form is destroyed" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &old) : AForm(old)
@@ -68,7 +65,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
         file << "             |||\n";
         file << "       , -=-~  .-^- _\n";
 
-        std::cout << "ShrubberyCreationForm executed successfully. Check " << filename << std::endl;
+        std::cout << GREEN "Success: "<< RESET << "ShrubberyCreationForm executed successfully. Check file: " << filename << std::endl;
     } else {
         std::cerr << "Error: Unable to open file " << filename << " for writing." << std::endl;
     }
