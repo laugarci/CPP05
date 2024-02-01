@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:39:55 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 10:33:56 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:48:17 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,19 @@ unsigned int Form::getExecGrade (void) const
 void Form::beSigned(const Bureaucrat& bureaucrat)
 {
 	if (bureaucrat.getGrade() > _gradeToSign)
+	{
+		std::cout << bureaucrat.getName() << " couldn't sign " << this->_name << ". ";
 		throw Form::GradeTooLowException();
+	}
 	else if (bureaucrat.getGrade() < _gradeToSign)
+	{
+		std::cout << bureaucrat.getName() << " couldn't sign " << this->_name << ". ";
 		throw Form::GradeTooHighException();
+	}
 	if (_sign == false)
 	{
 		_sign = true;
-		std::cout << GREEN "Success: " RESET "the form was successfully signed." << std::endl;
+		std::cout << GREEN "Success: " RESET << bureaucrat.getName() << " signed form " << this->_name << std::endl;
 	}
 	else
 		std::cout << RED "This form is already signed." RESET << std::endl;

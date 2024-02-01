@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:30:31 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 10:32:23 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:50:17 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ class Form {
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw() {
-					return "Bureaucrat grade too high to sign this form.";
+					return "Bureaucrat grade too high.";
 				}
 		};
 		class GradeTooLowException : public std::exception {
 			public:
 				const char* what() const throw() {
-					return "Bureaucrat grade too low to sign this form.";
+					return "Bureaucrat grade too low.";
 				}
 		};
 		class IncorrectGrades : public std::exception {

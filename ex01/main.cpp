@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:04:45 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 10:33:11 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:50:19 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void tryToSign(Bureaucrat& bureaucrat)
 		bureaucrat.signForm(form);
 	//	bureaucrat.signForm(form);
 		std::cout << std::endl;
-		//std::cout << std::endl << form << std::endl << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -92,6 +91,9 @@ int main()
 	std::cout << b;
 	decrementGradeTest(b);
 	std::cout << b;
+	std::cout << std::endl << BGRED "[ PRINT FORM INFO TEST ]" RESET << std::endl;
+	Form test1("Form", 5, 5);
+	std::cout << std::endl << test1 << std::endl << std::endl;
 
 	return (0);
 }
