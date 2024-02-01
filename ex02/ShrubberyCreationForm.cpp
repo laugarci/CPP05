@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:18:21 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 17:07:16 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:21:56 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &old) : AForm(old)
 {
-    std::cout << "Shrubbery Creation Form is copied" << std::endl;
     *this = old;
 }
 
