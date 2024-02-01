@@ -6,12 +6,12 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:03:34 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 15:07:16 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:03:03 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
@@ -19,17 +19,17 @@
 #include <iostream>
 #include <string>
 
-class PresidentialPardonForm {
+class PresidentialPardonForm : public AForm {
 	private:
-		std::string const _name;
-		bool _sign;
-		int const _gradeToSign;
-		int const _gradeToExecute;
+		std::string _target;
 	public:
 		PresidentialPardonForm();
+		PresidentialPardonForm(std::string target);
 		~PresidentialPardonForm();
 		PresidentialPardonForm(const PresidentialPardonForm& old);
 		PresidentialPardonForm	&operator=(const PresidentialPardonForm& form);
+		std::string getTarget() const;
+		void execute(Bureaucrat const& executor) const;
 };
 
 

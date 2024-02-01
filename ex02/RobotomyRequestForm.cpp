@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:10:39 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 17:17:19 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:07:26 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ std::string RobotomyRequestForm::getTarget(void) const
 void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
 	std::cout << "rrrrbbbbrrtttttttt" << std::endl;
+	(void)executor;
 
 }

@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:17:28 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 17:24:56 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:06:46 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ std::string PresidentialPardonForm::getTarget(void) const
 void PresidentialPardonForm::execute(Bureaucrat const& executor) const
 {
 	std::cout << _target + " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	(void)executor;
 }
