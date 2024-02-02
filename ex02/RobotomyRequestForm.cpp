@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:10:39 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 18:07:26 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/02 14:49:53 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm ("RobotomyRequestForm Creatio
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45)
 {
 	this->_target = target;
+}
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &old) : AForm(old)
