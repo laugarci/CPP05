@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:18:21 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 17:56:52 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:20:54 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 
         std::cout << GREEN "Success: "<< RESET << "ShrubberyCreationForm executed successfully. Check file: " << filename << std::endl;
     } else {
-        std::cerr << "Error: Unable to open file " << filename << " for writing." << std::endl;
+        std::cerr << RED << "Error: " << RESET << "Unable to open file " << filename << " for writing." << std::endl;
     }
 }
 
