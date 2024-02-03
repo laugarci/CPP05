@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:10:39 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/03 17:23:34 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:22:42 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,14 @@ std::string RobotomyRequestForm::getTarget(void) const
 
 void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
-	if (executor.getGrade() > (int)this->getExecGrade())
-		throw AForm::GradeTooLowException();
-    else
-	{
-        static int  i;
-        if (i % 2 == 0)
-            std::cout << "PIIIIIBRRRRZZZZ...! " << _target << " has been robotomized!" << std::endl;
-        else
-            std::cout << "Process failed! " << _target << " was not robotomized!" << std::endl;
-        i++;
-    }
+	if (executor.getGrade() < (int)this->getExecGrade())
+		throw GradeTooLowException();
+	else if (executor.getGrade() > (int)this->getExecGrade())
+		throw GradeTooHighException();
+	static int  i;
+	if (i % 2 == 0)
+		std::cout << GREEN "PIIIIIBRRRRZZZZ...! " RESET << _target << " has been robotomized!" << std::endl;
+	else
+		std::cout << RED "Process failed! " RESET << _target << " was not robotomized!" << std::endl;
+	i++;
 }
