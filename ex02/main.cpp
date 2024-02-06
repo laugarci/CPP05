@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:02:19 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/03 18:27:07 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:29:51 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void createObject(std::string name, int grade)
 
 int main()
 {
-	Bureaucrat bur("test", 10);
 	AForm *form = new ShrubberyCreationForm("ShrForm");
 	AForm *form2 = new PresidentialPardonForm("PresiForm");
 	AForm *form3 = new RobotomyRequestForm("RobotForm");
