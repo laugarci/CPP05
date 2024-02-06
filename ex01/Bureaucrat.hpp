@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 12:27:07 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 10:51:15 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:26:05 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Form;
 
 class Bureaucrat {
 	private:
-		std::string _name;
+		const std::string _name;
 		int			_grade;
 	public:
 		Bureaucrat();

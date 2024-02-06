@@ -6,23 +6,18 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:03:52 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/31 18:44:04 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:19:35 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): _name("undefined"), _grade(150)
 {
-	_name = "undefined";
-	_grade = 150;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
-{
-	_name = name;
-	_grade = grade;
+Bureaucrat::Bureaucrat(std::string name, int grade): _name (name), _grade(grade){
 	if (this->_grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (this->_grade > 150)
@@ -43,7 +38,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat& bureaucrat)
 {
 	if (this != &bureaucrat)
 	{
-		this->_name = bureaucrat.getName();
 		this->_grade = bureaucrat.getGrade();
 	}
 	return (*this);

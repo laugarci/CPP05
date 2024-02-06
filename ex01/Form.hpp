@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:30:31 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/01 10:50:17 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:25:48 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Bureaucrat;
 
 class Form {
 	private:
-		std::string const _name;
+		const std::string _name;
 		bool _sign;
-		int const _gradeToSign;
-		int const _gradeToExecute;
+		const int _gradeToSign;
+		const int _gradeToExecute;
 	public:
 		Form();
 		Form( std::string name, unsigned int _signGrade, unsigned int _execGrade );
