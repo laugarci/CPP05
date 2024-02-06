@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:04:45 by laugarci          #+#    #+#             */
-/*   Updated: 2024/01/27 16:32:27 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:16:05 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void createObject(std::string name, int grade)
 {
 	try {
-	Bureaucrat a(name, grade);
-	std::cout << a << std::endl;
+		Bureaucrat a(name, grade);
+		std::cout << a << std::endl;
 	} catch (const std::exception& e) {
 		std::cerr << RED "Error: " RESET << e.what() << std::endl << std::endl;
 	}
