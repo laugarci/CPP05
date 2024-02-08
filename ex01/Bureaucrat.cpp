@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:03:52 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/06 15:19:35 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/08 09:51:49 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	Bureaucrat::getGrade() const
 	return (this->_grade);
 }
 
-void    Bureaucrat::signForm(Form &form)
+void    Bureaucrat::signForm(Form &form) const
 {
 	try
 	{
