@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:30:31 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/06 15:25:48 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:55:44 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ class Form {
 		const int _gradeToExecute;
 	public:
 		Form();
-		Form( std::string name, unsigned int _signGrade, unsigned int _execGrade );
+		Form( std::string name, int _signGrade, int _execGrade );
 		~Form();
 		Form(const Form& old);
 		Form	&operator=(const Form& form);
 		std::string	getName( void ) const;
 		bool			getIsSigned( void ) const;
-		unsigned int	getSignGrade( void ) const;
-		unsigned int	getExecGrade( void ) const;
+		int	getSignGrade( void ) const;
+		int	getExecGrade( void ) const;
 		void			beSigned( const Bureaucrat& bureaucrat );
 		//exceptions
 		class GradeTooHighException : public std::exception {

@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:04:45 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/05 14:24:26 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:01:14 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,11 @@ int main()
 	decrementGradeTest(b);
 	std::cout << b;
 	std::cout << std::endl << BGRED "[ PRINT FORM INFO TEST ]" RESET << std::endl;
-	Form test1("Form", 5, 5);
-	std::cout << std::endl << test1 << std::endl << std::endl;
-
+	try {
+		Form test1("Form", 5, -5);
+		std::cout << test1 << std::endl;
+	} catch (const std::exception &e) {
+		std::cerr << RED "Error: " RESET << e.what() << std::endl;
+	}
 	return (0);
 }
