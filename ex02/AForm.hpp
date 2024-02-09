@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:30:31 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/06 15:37:44 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:03:13 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ class AForm {
 		int const _gradeToExecute;
 	public:
 		AForm();
-		AForm( std::string name, unsigned int _signGrade, unsigned int _execGrade );
+		AForm( std::string name, int _signGrade, int _execGrade );
 		virtual ~AForm();
 		AForm(const AForm& old);
 		AForm	&operator=(const AForm& aform);
 		std::string	getName( void ) const;
 		bool			getIsSigned( void ) const;
-		unsigned int	getSignGrade( void ) const;
-		unsigned int	getExecGrade( void ) const;
+		int	getSignGrade( void ) const;
+		int	getExecGrade( void ) const;
 		void			beSigned( const Bureaucrat& bureaucrat );
 		virtual void        execute(Bureaucrat const & executor) const = 0;
 		//exceptions

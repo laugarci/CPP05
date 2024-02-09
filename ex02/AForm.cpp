@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:39:55 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/03 17:23:07 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:03:27 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ AForm::AForm() : _name("Default"), _gradeToSign(10), _gradeToExecute(6)
     std::cout << "Default constructor called" << std::endl;
 }
 
-AForm::AForm(std::string name, unsigned int signGrade, unsigned int execGrade)
+AForm::AForm(std::string name, int signGrade, int execGrade)
     : _name(name), _sign(false), _gradeToSign(signGrade), _gradeToExecute(execGrade)
 {
-	if (_gradeToSign < 1)
+	if (_gradeToSign < 1 || _gradeToSign > 150)
 		throw IncorrectGrades();
-	else if (_gradeToExecute > 150)
+	else if (_gradeToExecute < 1 || _gradeToExecute > 150)
 		throw IncorrectGrades();
 }
 
@@ -57,12 +57,12 @@ bool	AForm::getIsSigned(void) const
 	return (_sign);
 }
 
-unsigned int AForm::getSignGrade(void) const
+int AForm::getSignGrade(void) const
 {
 	return (_gradeToSign);
 }
 
-unsigned int AForm::getExecGrade (void) const
+int AForm::getExecGrade (void) const
 {
 	return (_gradeToExecute);
 }
