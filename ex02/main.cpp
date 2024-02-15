@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:02:19 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/06 16:29:51 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/15 09:51:53 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ int main()
 	std::cout << *form3 << std::endl;
 
 	std::cout << BGRED " [ SHRUBBERY FORM  ]" RESET << std::endl;
-	Bureaucrat bur1("test1", 137);
 	try {
+		Bureaucrat bur1("test1", 137);
 		form->execute(bur1);
 	}
 	catch (const std::exception& e) {
@@ -100,16 +100,16 @@ int main()
 	
 	}
 	std::cout << BGRED " [ PRESIDENT FORM ] " RESET << std::endl;
-	Bureaucrat bur2("test2", 5);
 	try {
+		Bureaucrat bur2("test2", 5);
 		form2->execute(bur2);
 	} catch (const std::exception& e){
 		std::cerr << RED "Error: " RESET << e.what() << std::endl;
 	}
 
 	std::cout << BGRED " [ ROBOTOMY FORM ] " RESET << std::endl;
-	Bureaucrat bur3("test3", 45);
 	try {
+		Bureaucrat bur3("test3", 45);
 		form3->execute(bur3);
 		form3->execute(bur3);
 		form3->execute(bur3);
@@ -124,4 +124,8 @@ int main()
 	createObject("Persona3", 72);
 	createObject("Persona4", 25);
 	createObject("Persona5", 10);
+
+	delete form;
+	delete form2;
+	delete form3;
 }
