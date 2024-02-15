@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:04:45 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/09 15:02:20 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/15 09:46:10 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,26 +74,34 @@ int main()
 	createObject("GGG", 170);
 	createObject("HHH", 6734);
 	std::cout << std::endl << BGRED "[ INCREMENT GRADE TEST ]" RESET << std::endl;
-	Bureaucrat a ("Increment", 3);
-	std::cout << a;
-	incrementGradeTest(a);
-	std::cout << a;
-	incrementGradeTest(a);
-	std::cout << a;
-	incrementGradeTest(a);
-	std::cout << a;
+	try {
+		Bureaucrat a ("Increment", 3);
+		std::cout << a;
+		incrementGradeTest(a);
+		std::cout << a;
+		incrementGradeTest(a);
+		std::cout << a;
+		incrementGradeTest(a);
+		std::cout << a;
+	} catch (const std::exception& e) {
+		std::cerr << RED "Error: " RESET << e.what() << std::endl;
+	}
 	std::cout << std::endl << BGRED "[ DECREMENT GRADE TEST ]" RESET << std::endl;
-	Bureaucrat b ("Decrement", 148);
-	std::cout << b;
-	decrementGradeTest(b);
-	std::cout << b;
-	decrementGradeTest(b);
-	std::cout << b;
-	decrementGradeTest(b);
-	std::cout << b;
+	try {
+		Bureaucrat b ("Decrement", 148);
+		std::cout << b;
+		decrementGradeTest(b);
+		std::cout << b;
+		decrementGradeTest(b);
+		std::cout << b;
+		decrementGradeTest(b);
+		std::cout << b;
+	} catch (const std::exception& e) {
+		std::cerr << RED "Error: " RESET << e.what() << std::endl;
+	}
 	std::cout << std::endl << BGRED "[ PRINT FORM INFO TEST ]" RESET << std::endl;
 	try {
-		Form test1("Form", 5, -5);
+		Form test1("Form", 5, 5);
 		std::cout << test1 << std::endl;
 	} catch (const std::exception &e) {
 		std::cerr << RED "Error: " RESET << e.what() << std::endl;
