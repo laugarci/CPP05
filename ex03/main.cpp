@@ -17,6 +17,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+
 int main()
 {
 	std::cout << BGRED "[ SUBJECT TEST ]" RESET << std::endl;
@@ -40,7 +41,7 @@ int main()
 	presi->execute(bur1);
 	Bureaucrat bur2("test3", 137);
 	shr->execute(bur2);
-
-	AForm *test = intern1.makeForm("incorrect", "bah");
-	//falta gestionar que pasa si no existe
+	
+	AForm *test = intern1.makeForm("test", "test");
+	test->execute(bur2);
 }

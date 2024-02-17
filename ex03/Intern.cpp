@@ -37,26 +37,21 @@ Intern &Intern::operator=(const Intern& other)
 AForm *Intern::makeForm(std::string name, std::string target)
 {
 	AForm *form = NULL;
-	int i = 0;
-	std::string options[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
-	while (i <= 3)
+	if (name == "presidential pardon")
 	{
-		if (name.find(options[i]) != std::string::npos)
-			break ;
-		i++;
+		std::cout << "Intern " << target << " creates " << name << std::endl;
+		return new PresidentialPardonForm;
 	}
-	if (i == 0)
-		form = new PresidentialPardonForm;
-	else if (i == 1)
-		form = new RobotomyRequestForm;
-	else if (i == 2)
-		form = new ShrubberyCreationForm;
-	else
+	else if (name == "robotomy request")
 	{
-		std::cout << "Form not found" << std::endl;
-		return (form);
+		std::cout << "Intern " << target << " creates " << name << std::endl;
+		return new RobotomyRequestForm;
 	}
-	std::cout << "crear: " << options[i] << std::endl;
-	std::cout << "Intern " << target << " creates " << name << std::endl;
+	else if (name == "shrubbery creation")
+	{
+		std::cout << "Intern " << target << " creates " << name << std::endl;
+		return new ShrubberyCreationForm;
+	}
+	std::cout << "Error: non existen form" << std::endl;
 	return (form);
 }

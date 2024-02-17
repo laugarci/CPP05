@@ -51,7 +51,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 	else if (executor.getGrade() > (int)this->getExecGrade())
 		throw GradeTooHighException();
     std::string filename = _target + "_shrubbery";
-    std::ofstream file(filename);
+	std::ofstream file(filename.c_str());
 
     if (file.is_open()) {
         file << "          &&& &&  & &&\n";
