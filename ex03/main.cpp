@@ -42,6 +42,12 @@ int main()
 	Bureaucrat bur2("test3", 137);
 	shr->execute(bur2);
 	
+	try {
 	AForm *test = intern1.makeForm("test", "test");
 	test->execute(bur2);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 }

@@ -52,6 +52,7 @@ AForm *Intern::makeForm(std::string name, std::string target)
 		std::cout << "Intern " << target << " creates " << name << std::endl;
 		return new ShrubberyCreationForm;
 	}
-	std::cout << "Error: non existen form" << std::endl;
+	else
+		throw Intern::NonExistForm();
 	return (form);
 }
