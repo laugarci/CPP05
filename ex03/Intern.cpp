@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:03:04 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/16 15:02:43 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/18 16:43:40 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ AForm *Intern::makeForm(std::string name, std::string target)
 	if (name == "presidential pardon")
 	{
 		std::cout << "Intern " << target << " creates " << name << std::endl;
-		return new PresidentialPardonForm;
+		return new PresidentialPardonForm(target);
 	}
 	else if (name == "robotomy request")
 	{
 		std::cout << "Intern " << target << " creates " << name << std::endl;
-		return new RobotomyRequestForm;
+		return new RobotomyRequestForm(target);
 	}
 	else if (name == "shrubbery creation")
 	{
 		std::cout << "Intern " << target << " creates " << name << std::endl;
-		return new ShrubberyCreationForm;
+		return new ShrubberyCreationForm(target);
 	}
 	else
 		throw Intern::NonExistForm();
