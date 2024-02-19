@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:39:55 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/09 15:03:27 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:30:22 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,6 @@ void AForm::beSigned(const Bureaucrat& bureaucrat)
 	{
 		std::cout << bureaucrat.getName() << " couldn't sign " << this->_name << ". ";
 		throw AForm::GradeTooLowException();
-	}
-	else if (bureaucrat.getGrade() < _gradeToSign)
-	{
-		std::cout << bureaucrat.getName() << " couldn't sign " << this->_name << ". ";
-		throw AForm::GradeTooHighException();
 	}
 	if (_sign == false)
 	{

@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:18:21 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/16 14:28:58 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:31:28 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,8 @@ std::string	ShrubberyCreationForm::getTarget( void ) const
 
 void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 {
-	if (executor.getGrade() < (int)this->getExecGrade())
+	if (executor.getGrade() > (int)this->getExecGrade())
 		throw GradeTooLowException();
-	else if (executor.getGrade() > (int)this->getExecGrade())
-		throw GradeTooHighException();
     std::string filename = _target + "_shrubbery";
 	std::ofstream file(filename.c_str());
 

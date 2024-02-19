@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:10:39 by laugarci          #+#    #+#             */
-/*   Updated: 2024/02/03 18:22:42 by laugarci         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:27:49 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,8 @@ std::string RobotomyRequestForm::getTarget(void) const
 
 void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
-	if (executor.getGrade() < (int)this->getExecGrade())
+	if (executor.getGrade() > (int)this->getExecGrade())
 		throw GradeTooLowException();
-	else if (executor.getGrade() > (int)this->getExecGrade())
-		throw GradeTooHighException();
 	static int  i;
 	if (i % 2 == 0)
 		std::cout << GREEN "PIIIIIBRRRRZZZZ...! " RESET << _target << " has been robotomized!" << std::endl;
